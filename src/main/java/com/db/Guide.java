@@ -48,10 +48,13 @@ public class Guide {
 		GuideInsert guideInsert = new GuideInsert();
 		List<String> titleList = guideInsert.SELECTTITLE();
 		for (int i = 0; i < titleList.size(); i++) {
+			String[] arr = titleList.get(i).split(",");
+			String title = arr[1];
+			String area = arr[0];
 			// 圖片list 30
-			List<String> imgUrlList = BaiduImg.getPictures(titleList.get(i));
+			List<String> imgUrlList = BaiduImg.getPictures(area + title);
 			// 文章idㄉlist 3
-			List<String> guIdlList = guideInsert.slGuideId(titleList.get(i));
+			List<String> guIdlList = guideInsert.slGuideId(title);
 			for (int j = 0; j < imgUrlList.size() - (imgUrlList.size() / 2); j++) {
 				System.out.println(imgUrlList.get(j));
 				try {
