@@ -52,7 +52,7 @@ public class Guide {
 			List<String> imgUrlList = BaiduImg.getPictures(titleList.get(i));
 			// 文章idㄉlist 3
 			List<String> guIdlList = guideInsert.slGuideId(titleList.get(i));
-			for (int j = 0; j < imgUrlList.size(); j++) {
+			for (int j = 0; j < imgUrlList.size() - (imgUrlList.size() / 2); j++) {
 				System.out.println(imgUrlList.get(j));
 				try {
 					byte[] byteImg = ImageUtil.imgUrlgetByte(imgUrlList.get(j));

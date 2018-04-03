@@ -38,7 +38,7 @@ public class BaiduImg {
 
 	public static void main(String[] args) {
 		// 圖片list 30
-		List<String> imgUrlList = BaiduImg.getPictures("斗六");
+		List<String> imgUrlList = BaiduImg.getPictures("老梅綠石槽");
 		for (int j = 0; j < imgUrlList.size(); j++) {
 			System.out.println(imgUrlList.get(j));
 			try {

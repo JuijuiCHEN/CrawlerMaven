@@ -15,6 +15,8 @@ public class ImageUtil {
 		try { // 打開URL串流
 			URL url = new URL(imgUrl);
 			con = url.openConnection();
+			con.setConnectTimeout(15000);
+			con.setReadTimeout(15000);
 			// 打開InputStream串流
 			in = new BufferedInputStream(con.getInputStream());
 			byte[] guideImgContent = new byte[in.available()];
@@ -53,7 +55,7 @@ public class ImageUtil {
 
 	public static void main(String[] args) {
 
-		String imgUrl = "http://p1.lvpingphoto.com/images/phs/201303/13/jupiter/eb318bc4d9434ca484995ef1edc8d551.jpg";
+		String imgUrl = "http://jd.asean168.com/uploadfile/2015/0519/20150519025705769.jpg";
 		try {
 			byte[] imgByte = ImageUtil.imgUrlgetByte(imgUrl);
 			System.out.println(new String(imgByte, "utf-8"));
