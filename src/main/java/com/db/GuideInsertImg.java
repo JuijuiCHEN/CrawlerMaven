@@ -13,7 +13,7 @@ public class GuideInsertImg {
 			+ "VALUES('GI'||LPAD(to_char(GUIDE_PK_SEQ.NEXTVAL), 6, '0'),?,?)";
 
 	public void addGuideImg(String guideId, byte[] guideImgContent) {
-		if (guideImgContent == null || guideImgContent.length < 10) {
+		if (guideImgContent == null || guideImgContent.length < 10000) {
 			return;
 		}
 		Connection con = null;

@@ -36,4 +36,21 @@ public class BaiduImg {
 		return list;
 	}
 
+	public static void main(String[] args) {
+		// 圖片list 30
+		List<String> imgUrlList = BaiduImg.getPictures("斗六");
+		for (int j = 0; j < imgUrlList.size(); j++) {
+			System.out.println(imgUrlList.get(j));
+			try {
+				byte[] byteImg = ImageUtil.imgUrlgetByte(imgUrlList.get(j));
+				System.out.println(byteImg.length);
+				if (byteImg.length == 0) {
+					System.out.println("11111111111111111111111111111111111111111111111111111111111111111");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
 }

@@ -34,8 +34,12 @@ public class Guide {
 				System.out.println(index);
 				String guideTitle = a.get(i).text();
 				String guideContent = contentArr.get(index).text().replaceAll("閱讀更多", "");
+				if (guideContent.length() < 10) {
+					continue;
+				}
 				GuideInsert guideInsert = new GuideInsert();
 				guideInsert.addGuide(guideTitle, guideContent, AREA, address);
+				return;
 			}
 		}
 	}

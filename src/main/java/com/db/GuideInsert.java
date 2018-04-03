@@ -15,7 +15,7 @@ public class GuideInsert {
 	private static final String INSERT_STMT = "INSERT INTO guide(guide_id,mem_id,guide_title,guide_content,guide_read_size,guide_comm_size,guide_vote_size,guide_status,guide_area,guide_map)"
 			+ "VALUES('G'||LPAD(to_char(GUIDE_PK_SEQ.NEXTVAL), 6, '0'),?,?,?,?,?,?,?,?,?)";
 
-	private static final String SELECT_TITLE = "select DISTINCT GUIDE_TITLE  FROM GUIDE";
+	private static final String SELECT_TITLE = "select DISTINCT GUIDE_TITLE, GUIDE_AREA  FROM GUIDE";
 
 	private static final String SELECT_guide_id = "select guide_id  FROM GUIDE WHERE GUIDE_TITLE = ?";
 
@@ -50,7 +50,7 @@ public class GuideInsert {
 			pstmt = con.prepareStatement(SELECT_TITLE);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				list.add(rs.getString("GUIDE_TITLE"));
+				list.add(rs.getString("GUIDE_AREA") + rs.getString("GUIDE_TITLE"));
 			}
 		} catch (ClassNotFoundException ce) {
 			System.out.println(ce);
