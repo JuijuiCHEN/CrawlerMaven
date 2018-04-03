@@ -50,7 +50,7 @@ public class GuideInsert {
 			pstmt = con.prepareStatement(SELECT_TITLE);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				list.add(rs.getString("GUIDE_AREA") + rs.getString("GUIDE_TITLE"));
+				list.add(rs.getString("GUIDE_AREA") + "," + rs.getString("GUIDE_TITLE"));
 			}
 		} catch (ClassNotFoundException ce) {
 			System.out.println(ce);
