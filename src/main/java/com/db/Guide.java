@@ -55,7 +55,8 @@ public class Guide {
 			List<String> imgUrlList = BaiduImg.getPictures(area + title);
 			// 文章idㄉlist 3
 			List<String> guIdlList = guideInsert.slGuideId(title);
-			for (int j = 0; j < imgUrlList.size() - (imgUrlList.size() / 2); j++) {
+			for (int j = 0; j < imgUrlList.size() - (imgUrlList.size() / 1.5); j++) {
+				System.out.println(title + ":第 : " + j + " 張照片");
 				System.out.println(imgUrlList.get(j));
 				try {
 					byte[] byteImg = ImageUtil.imgUrlgetByte(imgUrlList.get(j));
@@ -90,9 +91,9 @@ public class Guide {
 		myList.add("員林,https://www.tripadvisor.com.tw/Attractions-g12421151-Activities-Yuanlin_Changhua.html");
 		myList.add("斗六,https://www.tripadvisor.com.tw/Attractions-g13806490-Activities-Douliu_Yunlin.html");
 		myList.add("新竹,https://www.tripadvisor.com.tw/Attractions-g297906-Activities-Hsinchu.html");
-		for (int i = 0; i < myList.size(); i++) {
-			addGuide(myList.get(i));
-		}
+		// for (int i = 0; i < myList.size(); i++) {
+		// addGuide(myList.get(i));
+		// }
 		addDBimg();
 	}
 }
