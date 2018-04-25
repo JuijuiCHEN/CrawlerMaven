@@ -91,9 +91,10 @@ public class Guide {
 		myList.add("員林,https://www.tripadvisor.com.tw/Attractions-g12421151-Activities-Yuanlin_Changhua.html");
 		myList.add("斗六,https://www.tripadvisor.com.tw/Attractions-g13806490-Activities-Douliu_Yunlin.html");
 		myList.add("新竹,https://www.tripadvisor.com.tw/Attractions-g297906-Activities-Hsinchu.html");
-		// for (int i = 0; i < myList.size(); i++) {
-		// addGuide(myList.get(i));
-		// }
-		addDBimg();
+		for (int i = 0; i < myList.size(); i++) {
+			Comm.addComm(myList.get(i));
+			// addGuide(myList.get(i));
+		}
+		// addDBimg();
 	}
 }
