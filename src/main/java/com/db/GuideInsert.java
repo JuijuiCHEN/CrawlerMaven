@@ -143,6 +143,7 @@ public class GuideInsert {
 		}
 	}
 
+	// 用標題查詢該文章id
 	public List<String> slGuideId(String title) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -163,6 +164,7 @@ public class GuideInsert {
 		return list;
 	}
 
+	// 回傳不重複的文章標題和該文章地區
 	public List<String> SELECTTITLE() {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -174,7 +176,7 @@ public class GuideInsert {
 			pstmt = con.prepareStatement(SELECT_TITLE);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				list.add(rs.getString("GUIDE_AREA") + "," + rs.getString("GUIDE_TITLE"));
+				list.add(rs.getString("GUIDE_AREA") + "," + rs.getString("GUIDE_TITLE")); // 把一個文章標題和地區裝在同一個位置
 			}
 		} catch (ClassNotFoundException ce) {
 			System.out.println(ce);
@@ -199,6 +201,7 @@ public class GuideInsert {
 		return list;
 	}
 
+	// 新增文章
 	public void addGuide(String guideTitle, String guideContent, String area, String address) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
